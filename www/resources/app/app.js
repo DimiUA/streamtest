@@ -34,12 +34,7 @@ var mainView = app.views.create('.view-main', {
 
 $$('.buttonStart').on('click', function(){
 
-	   var options = {
-            quality: 50,
-            destinationType: Camera.DestinationType.DATA_URL,
-            sourceType: 1, // 0:Photo Library, 1=Camera, 2=Saved Album
-            encodingType: 0 // 0=JPG 1=PNG
-        };
+	   	
 
         if (!navigator) {
         	alert('navigator not found');
@@ -49,22 +44,27 @@ $$('.buttonStart').on('click', function(){
         	alert('camera not found');
         	return;
         }
+
+        if (!navigator.mediaDevices) {
+        	alert('mediaDevices not found');
+        	return;
+        }
+
+        /*var options = {
+            quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL,
+            sourceType: 1, // 0:Photo Library, 1=Camera, 2=Saved Album
+            encodingType: 0 // 0=JPG 1=PNG
+        };
         navigator.camera.getPicture(
             function(imgData) {
-            	alert(imgData);
-                //$('.media-object', this.$el).attr('src', "data:image/jpeg;base64,"+imgData);
-                /*mainView.router.load({
-                    url: 'resources/templates/asset.edit.photo.html',
-                    context: {
-                        imgSrc: "data:image/jpeg;base64," + imgData
-                    }
-                });*/
+            	alert(imgData);                
 
             },
             function() {
                 alert('Error taking picture');
             },
-            options);
+            options);*/
 
 	/*var constraints = navigator.mediaDevices.getSupportedConstraints();
 	console.log(constraints);

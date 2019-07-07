@@ -33,11 +33,12 @@ var mainView = app.views.create('.view-main', {
 
 
 $$('.buttonStart').on('click', function(){
-	/*var constraints = navigator.mediaDevices.getSupportedConstraints();
-	console.log(constraints);*/
+	var constraints = navigator.mediaDevices.getSupportedConstraints();
+	console.log(constraints);
 
 	navigator.mediaDevices.getUserMedia({
 		  'video': {
+		  	'audio': true,
 		    'facingMode': 'environment'
 		  }
 		}).then(function(mediaStream) {
@@ -47,7 +48,7 @@ $$('.buttonStart').on('click', function(){
 		});
 
 	/*navigator.mediaDevices.getUserMedia({
-	    'audio': true,
+	   
 	    'video': {
 	        facingMode: 'user'
 	    }

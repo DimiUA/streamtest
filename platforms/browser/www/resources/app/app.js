@@ -66,10 +66,10 @@ $$('.buttonStart').on('click', function(){
             },
             options);*/
 
-	/*var constraints = navigator.mediaDevices.getSupportedConstraints();
-	console.log(constraints);
+	var constraints = navigator.mediaDevices.getSupportedConstraints();
+	alert(JSON.stringify(constraints) );
 
-		navigator.mediaDevices.getUserMedia({
+		/*navigator.mediaDevices.getUserMedia({
 			'video': {
 			  	'audio': true,
 			    'facingMode': 'environment'
